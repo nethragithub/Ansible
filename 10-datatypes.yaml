@@ -1,0 +1,17 @@
+- name: data-types
+  hosts: web
+  vars:
+    course: devops with aws #string
+    tools:
+    - linux #list
+    - docker
+    - ansible
+    experience: #dict or map
+      devops: 2.3 #numbers
+      linux: 2.3
+      cloud: 2.3  
+    realproject: yes  #bolean
+  tasks:
+  - name: print info
+    ansible.builtin.debug:
+    MSG: "{{COURSE}}, {{TOOLS}}, {{experience}}, {{realproject}}"  

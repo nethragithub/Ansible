@@ -1,0 +1,15 @@
+- name: task level variables
+  hosts: web
+  vars:
+    course: devops
+    tutor: siva
+    duration: 3 months
+  tasks:
+  - name: print info
+    ansible.buitin.debug:
+      msg: "i am learning {{course}} from {{tutor}} duration is {{duration}}"
+  - name: print override info
+    vars:
+      course: terraform
+    ansible.buitin.debug:
+      msg: "i am learning {{course}} from {{tutor}} duration is {{duration}}"
