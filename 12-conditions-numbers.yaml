@@ -1,0 +1,15 @@
+- name: numbers
+  hosts:
+  vars_prompt:
+  - name: NUMBER
+    prompt: "please enter no"
+    private: no
+  tasks:
+  - name: no less than 10
+    ansible.builtin.debug:
+      msg: "given no {{NUMBER}} is less than 10"
+    when: NUMBER | int < 10  
+  - name: no greather than 10
+    ansible.builtin.debug:
+      msg: "given no {{NUMBER}} is greather than 10"
+    when: NUMBER | int >= 10      
